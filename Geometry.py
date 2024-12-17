@@ -1,3 +1,4 @@
+import turtle
 from random import randint
 
 class Point:
@@ -31,6 +32,18 @@ class Rectangle:
         else:
             print(False)
             print(f"You were off by {abs(self.area - z)}")
+
+class Graphics():
+
+    def __init__(self):
+        self.my_turtle = turtle.Turtle()
+
+    def plot_rectangle(self):
+        pass
+
+    def plot_point(self):
+        self.my_turtle.penup()
+        self.my_turtle.goto(x, y)
 
 obj1 = Rectangle()
 x = int(input("Guess x Co-ords: "))
