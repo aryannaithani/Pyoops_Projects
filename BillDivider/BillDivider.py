@@ -1,3 +1,4 @@
+from filestack import Client
 import webbrowser
 from fpdf import FPDF
 
@@ -35,7 +36,7 @@ class PdfGenerator:
     """
     Generates a .pdf file of the bill in the main directory
     with information regarding both flatmates and the bill
-    and opens the pdf in the default browser
+    and provides a link to the pdf
     """
 
     def generate_pdf(self):
@@ -75,7 +76,9 @@ class PdfGenerator:
         pdf.cell(w=175, h=75, txt=f'{mate2.payment():.2f}', ln=1, border=1, align='C')
         pdf.line(x1=50, y1=600, x2=545, y2=600)
         pdf.output('bill.pdf')
-        webbrowser.open('bill.pdf')
+        client = Client('AxG9Oi03qTq6UJue2O5npz')
+        link = client.upload(filepath='bill.pdf')
+        print(link.url)
 
 
 amount = int(input("Please enter the bill amount: "))
