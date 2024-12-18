@@ -1,6 +1,10 @@
 from fpdf import FPDF
 
 class Bill:
+    """
+    Generates a basic bill object with all the basic bill
+    information like the amount and the period of the bill.
+    """
 
     def __init__(self, l_amount, l_period):
         self.amount = l_amount
@@ -8,17 +12,29 @@ class Bill:
 
 
 class FlatMates:
+    """
+    Used for making Flatmate objects with
+    parameters name and number of days stayed.
+    """
 
     def __init__(self, name, days):
         self.name = name
         self.days = days
 
     def payment(self):
+        """
+        Calculates the weight of one flatmate and
+        uses that to calculate the payable amount
+        """
         weight = self.days / (mate1.days + mate2.days)
         return the_bill.amount * weight
 
 
 class PdfGenerator:
+    """
+    Generates a .pdf file of the bill in the main directory
+    with information regarding both flatmates and the bill
+    """
 
     def generate_pdf(self):
         pdf = FPDF(orientation='P', format='A4', unit='pt')
