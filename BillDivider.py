@@ -1,3 +1,4 @@
+import webbrowser
 from fpdf import FPDF
 
 class Bill:
@@ -73,6 +74,7 @@ class PdfGenerator:
         pdf.cell(w=175, h=75, txt=f'{mate2.payment():.2f}', ln=1, border=1, align='C')
         pdf.line(x1=50, y1=600, x2=545, y2=600)
         pdf.output('bill.pdf')
+        webbrowser.open('bill.pdf')
 
 
 amount = int(input("Please enter the bill amount: "))
