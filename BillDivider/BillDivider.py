@@ -1,5 +1,4 @@
 from filestack import Client
-import webbrowser
 from fpdf import FPDF
 
 class Bill:
@@ -28,6 +27,7 @@ class FlatMates:
         Calculates the weight of one flatmate and
         uses that to calculate the payable amount
         """
+
         weight = self.days / (mate1.days + mate2.days)
         return the_bill.amount * weight
 
