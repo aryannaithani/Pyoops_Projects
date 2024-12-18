@@ -35,6 +35,7 @@ class PdfGenerator:
     """
     Generates a .pdf file of the bill in the main directory
     with information regarding both flatmates and the bill
+    and opens the pdf in the default browser
     """
 
     def generate_pdf(self):
