@@ -5,8 +5,6 @@ import numpy as np
 class CanvasGen:
 
     def __init__(self, height, width, color):
-        self.height = height
-        self.width = width
         self.data = np.zeros((height, width, 3), dtype=np.uint8)
         self.data[:] = color
 
