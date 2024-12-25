@@ -23,9 +23,8 @@
         cols: 1
         padding: 15
         spacing: 15
-        size_hint_y: 0.80
         Image:
-            size_hint_y: 0.80
+            size_hint_y: 0.70
             id: img
         Button:
             size_hint_y: 0.1
@@ -36,18 +35,12 @@
             size_hint_y: 0.1
             text: 'Link will be here'
         GridLayout:
-            size_hint_y: 0.20
             cols: 2
-            padding: 15
-            spacing: 15
+            size_hint_y: 0.1
             Button:
-                size_hint_y: 0.5
-                size_hint_x: 0.5
                 text: 'Copy to ClipBoard'
                 on_press: root.copy_to_clipboard()
             Button:
-                size_hint_y: 0.5
-                size_hint_x: 0.5
                 text: 'Open in Browser'
                 on_press: root.open_in_browser()
 

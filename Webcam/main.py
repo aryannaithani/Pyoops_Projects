@@ -31,13 +31,12 @@ class FileOperations(Screen):
         client = Client('AxG9Oi03qTq6UJue2O5npz')
         link = client.upload(filepath=self.manager.current_screen.ids.img.source)
         self.manager.current_screen.ids.img_label.text = link.url
-        return link.url
 
     def copy_to_clipboard(self):
-        pyperclip.copy(self.create_link())
+        pyperclip.copy(self.manager.current_screen.ids.img_label.text)
 
     def open_in_browser(self):
-        webbrowser.open(self.create_link())
+        webbrowser.open(self.manager.current_screen.ids.img_label.text)
 
 
 class RootWidget(ScreenManager):
