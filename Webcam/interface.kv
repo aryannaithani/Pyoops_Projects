@@ -1,0 +1,61 @@
+<Webcam>:
+    GridLayout:
+        cols: 1
+        padding: 15
+        spacing: 15
+        Camera:
+            size_hint_y: 0.80
+            resolution: (640, 480)
+            play: False
+            id: camera
+        Button:
+            id: toggle_button
+            size_hint_y: 0.1
+            text: 'Start Video'
+            on_press: root.toggle_video()
+        Button:
+            size_hint_y: 0.1
+            text: 'Capture'
+            on_press: root.capture_image()
+
+<FileOperations>:
+    GridLayout:
+        cols: 1
+        padding: 15
+        spacing: 15
+        size_hint_y: 0.80
+        Image:
+            size_hint_y: 0.80
+            id: img
+        Button:
+            size_hint_y: 0.1
+            text: 'Create Shareable Link'
+            on_press: root.create_link()
+        Label:
+            id: img_label
+            size_hint_y: 0.1
+            text: 'Link will be here'
+        GridLayout:
+            size_hint_y: 0.20
+            cols: 2
+            padding: 15
+            spacing: 15
+            Button:
+                size_hint_y: 0.5
+                size_hint_x: 0.5
+                text: 'Copy to ClipBoard'
+                on_press: root.copy_to_clipboard()
+            Button:
+                size_hint_y: 0.5
+                size_hint_x: 0.5
+                text: 'Open in Browser'
+                on_press: root.open_in_browser()
+
+
+<RootWidget>:
+    Webcam:
+        id: webcam
+        name: 'webcam'
+    FileOperations:
+        id: file_operations
+        name: 'file_operations'
