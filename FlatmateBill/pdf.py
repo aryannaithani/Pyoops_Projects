@@ -1,35 +1,7 @@
 from filestack import Client
 from fpdf import FPDF
 
-class Bill:
-    """
-    Generates a basic bill object with all the basic bill
-    information like the amount and the period of the bill.
-    """
-
-    def __init__(self, l_amount, l_period):
-        self.amount = l_amount
-        self.period = l_period
-
-
-class FlatMates:
-    """
-    Used for making Flatmate objects with
-    parameters name and number of days stayed.
-    """
-
-    def __init__(self, name, days):
-        self.name = name
-        self.days = days
-
-    def payment(self):
-        """
-        Calculates the weight of one flatmate and
-        uses that to calculate the payable amount
-        """
-
-        weight = self.days / (mate1.days + mate2.days)
-        return the_bill.amount * weight
+from FlatmateBill.flat import the_bill, mate1, mate2
 
 
 class PdfGenerator:
@@ -77,20 +49,5 @@ class PdfGenerator:
         pdf.line(x1=50, y1=600, x2=545, y2=600)
         pdf.output('bill.pdf')
         client = Client('AxG9Oi03qTq6UJue2O5npz')
-        link = client.upload(filepath='bill.pdf')
+        link = client.upload(filepath='../BillDivider/bill.pdf')
         print(link.url)
-
-
-amount = int(input("Please enter the bill amount: "))
-period = input("Please enter the bill period: ").capitalize()
-name1 = input("What is your name?: ").capitalize()
-days1 = int(input("How many days did you stay in the house: "))
-name2 = input("What is the name of the other flatmate?: ").capitalize()
-days2 = int(input(f"How many days did {name2} stay in the house: "))
-the_bill = Bill(amount, period)
-mate1 = FlatMates(name1, days1)
-mate2 = FlatMates(name2, days2)
-bill = PdfGenerator()
-print(f"You have to pay : {mate1.payment():.2f}")
-print(f"{name2} has to pay : {mate2.payment():.2f}")
-bill.generate_pdf()
