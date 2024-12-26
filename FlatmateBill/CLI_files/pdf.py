@@ -1,7 +1,7 @@
 from filestack import Client
 from fpdf import FPDF
 
-from FlatmateBill.flat import the_bill, mate1, mate2
+from FlatmateBill.CLI_files.flat import the_bill, mate1, mate2
 
 
 class PdfGenerator:
@@ -47,7 +47,7 @@ class PdfGenerator:
         pdf.set_font(family='Times', size=20)
         pdf.cell(w=175, h=75, txt=f'{mate2.payment():.2f}', ln=1, border=1, align='C')
         pdf.line(x1=50, y1=600, x2=545, y2=600)
-        pdf.output('bill.pdf')
+        pdf.output('Bills/bill.pdf')
         client = Client('AxG9Oi03qTq6UJue2O5npz')
-        link = client.upload(filepath='../BillDivider/bill.pdf')
+        link = client.upload(filepath='../Bills/bill.pdf')
         print(link.url)

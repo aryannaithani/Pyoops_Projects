@@ -1,7 +1,33 @@
-from FlatmateBill.flat import name2, mate1, mate2
-from FlatmateBill.pdf import PdfGenerator
+from flask.views import MethodView
+from wtforms import Form
+from flask import Flask
+from flask import render_template
 
-bill = PdfGenerator()
-print(f"You have to pay : {mate1.payment():.2f}")
-print(f"{name2} has to pay : {mate2.payment():.2f}")
-bill.generate_pdf()
+app = Flask(__name__)
+
+class HomePage(MethodView):
+
+    def get(self):
+        return render_template('index.html')
+
+
+class BillFormPage(MethodView):
+
+    def get(self):
+        return render_template('bill-form.html')
+
+
+class ResultPage(MethodView):
+
+    def get(self):
+        pass
+
+
+class BillForm(Form):
+    pass
+
+
+app.add_url_rule('/', view_func=HomePage.as_view('home_page'))
+app.add_url_rule('/bill-form', view_func=BillFormPage.as_view('bill_form_page'))
+
+app.run(debug=True)
