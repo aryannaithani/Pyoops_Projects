@@ -58,4 +58,4 @@ class PdfGenerator:
         pdf.output('bill.pdf')
         client = Client('AxG9Oi03qTq6UJue2O5npz')
         link = client.upload(filepath='bill.pdf')
-        print(link.url)
+        return link.url

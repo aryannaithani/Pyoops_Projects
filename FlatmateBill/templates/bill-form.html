@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bill Form</title>
+    <link rel="stylesheet" href="static/billform.css">
 </head>
 <body>
+<div>
     <h1>Bill Form</h1>
     <form action="/result-page" method="post">
-        {{bill_form.amount.label}} {{bill_form.amount}}<br>
-        {{bill_form.period.label}} {{bill_form.period}}
+        <h3>General Information</h3>
+        {{bill_form.amount.label}}<br> {{bill_form.amount}}<br>
+        {{bill_form.period.label}}<br> {{bill_form.period}}
         <hr>
         <h3>Flatmate 1</h3>
-        {{bill_form.name1.label}} {{bill_form.name1}}<br>
-        {{bill_form.days1.label}} {{bill_form.days1}}
+        {{bill_form.name1.label}}<br> {{bill_form.name1}}<br>
+        {{bill_form.days1.label}}<br> {{bill_form.days1}}
         <hr>
         <h3>Flatmate 2</h3>
-        {{bill_form.name2.label}} {{bill_form.name2}}<br>
-        {{bill_form.days2.label}} {{bill_form.days2}}
+        {{bill_form.name2.label}}<br> {{bill_form.name2}}<br>
+        {{bill_form.days2.label}}<br> {{bill_form.days2}}
         <hr>
         {{bill_form.button}}
     </form>
+</div>
 </body>
 </html>

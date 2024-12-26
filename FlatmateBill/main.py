@@ -3,6 +3,7 @@ from wtforms import Form, StringField, SubmitField
 from flask import Flask
 from flask import render_template, request
 from CLI_files import flat
+from CLI_files import pdf
 
 app = Flask(__name__)
 
@@ -29,14 +30,15 @@ class ResultPage(MethodView):
         name2 = bill_form.name2.data
         days1 = int(bill_form.days1.data)
         days2 = int(bill_form.days2.data)
-
         mate1 = flat.FlatMates(name1, days1, days2, amount)
         mate2 = flat.FlatMates(name2, days2, days1, amount)
+        bill_pdf = pdf.PdfGenerator(name1, name2, days1, days2, amount, period, mate1, mate2)
         return render_template('result-page.html',
                                name1=name1,
                                name2=name2,
                                amount1=f'{mate1.payment():.2f}',
-                               amount2=f'{mate2.payment():.2f}')
+                               amount2=f'{mate2.payment():.2f}',
+                               link=bill_pdf.generate_pdf())
 
 
 class BillForm(Form):

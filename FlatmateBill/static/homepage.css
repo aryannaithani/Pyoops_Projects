@@ -1,0 +1,26 @@
+h1{
+    color: grey;
+    text-align: center;
+    font-size: 60px;
+    margin: 5px;
+}
+
+.button {
+    text-align: center;
+    background-color: Yellowgreen;
+    width: 200px;
+    margin-left: 650px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+p {
+    font-size: 25px;
+    text-align: center;
+}
+
+.container {
+    background-color: ghostwhite;
+    border-radius: 15px;
+    height: 700px;
+}
