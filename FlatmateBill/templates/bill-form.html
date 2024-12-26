@@ -7,36 +7,19 @@
 </head>
 <body>
     <h1>Bill Form</h1>
-    <form>
-        <table style="border: 1px solid black;">
-            <tr>
-                <td>Bill Amount</td>
-                <td><input type="number"></td>
-            </tr>
-            <tr>
-                <td>Bill Period</td>
-                <td><input type="text"></td>
-            </tr>
-            <tr><td colspan="2" style="text-align: center;"><h3>Flatmate 1</h3></td></tr>
-            <tr>
-                <td>Name</td>
-                <td><input type="text"></td>
-            </tr>
-            <tr>
-                <td>Days in House</td>
-                <td><input type="number"></td>
-            </tr>
-            <tr><td colspan="2" style="text-align: center;"><h3>Flatmate 2</h3></td></tr>
-            <tr>
-                <td>Name</td>
-                <td><input type="text"></td>
-            </tr>
-            <tr>
-                <td>Days in House</td>
-                <td><input type="number"></td>
-            </tr>
-            <tr><td colspan="2" style="text-align: center;"><button>Calculate</button></td></tr>
-        </table>
+    <form action="/result-page" method="post">
+        {{bill_form.amount.label}} {{bill_form.amount}}<br>
+        {{bill_form.period.label}} {{bill_form.period}}
+        <hr>
+        <h3>Flatmate 1</h3>
+        {{bill_form.name1.label}} {{bill_form.name1}}<br>
+        {{bill_form.days1.label}} {{bill_form.days1}}
+        <hr>
+        <h3>Flatmate 2</h3>
+        {{bill_form.name2.label}} {{bill_form.name2}}<br>
+        {{bill_form.days2.label}} {{bill_form.days2}}
+        <hr>
+        {{bill_form.button}}
     </form>
 </body>
 </html>
