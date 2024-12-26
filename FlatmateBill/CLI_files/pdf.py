@@ -18,7 +18,6 @@ class PdfGenerator:
         self.mate1 = mate1
         self.mate2 = mate2
 
-
     def generate_pdf(self):
         pdf = FPDF(orientation='P', format='A4', unit='pt')
         pdf.add_page()
