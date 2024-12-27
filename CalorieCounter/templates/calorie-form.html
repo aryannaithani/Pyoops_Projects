@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Form</title>
+    <link rel="stylesheet" href="static/calorieform.css">
+    <script>
+        function myfxn(){
+            document.getElementById("result").innerHTML = "You need 1 million calories";
+        }
+    </script>
+</head>
+<body>
+    <h1>Calorie Form</h1>
+    <form onsubmit="myfxn(); return false;">
+        <p>Fill out the form below to find out how many calories you need<br>Tell us about yourself</p>
+        {{calorie_form.weight.label}}<br> {{calorie_form.weight}}<br>
+        {{calorie_form.height.label}}<br> {{calorie_form.height}}<br>
+        {{calorie_form.age.label}}<br> {{calorie_form.age}}<br>
+        <hr>
+        <br>
+        <p>Today's weather counts too<br>Tell us where you're from</p>
+        {{calorie_form.country.label}}<br> {{calorie_form.country}}<br>
+        {{calorie_form.city.label}}<br> {{calorie_form.city}}<br>
+        <hr>
+        {{calorie_form.button}}
+    </form>
+    <p id="result" class="result"></p>
+</body>
+</html>
