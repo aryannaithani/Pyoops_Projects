@@ -19,9 +19,6 @@ class BillFormPage(MethodView):
         bill_form = BillForm()
         return render_template('bill-form.html', bill_form=bill_form)
 
-
-class ResultPage(MethodView):
-
     def post(self):
         bill_form = BillForm(request.form)
         amount = int(bill_form.amount.data)
@@ -33,7 +30,9 @@ class ResultPage(MethodView):
         mate1 = flat.FlatMates(name1, days1, days2, amount)
         mate2 = flat.FlatMates(name2, days2, days1, amount)
         bill_pdf = pdf.PdfGenerator(name1, name2, days1, days2, amount, period, mate1, mate2)
-        return render_template('result-page.html',
+        return render_template('bill-form.html',
+                               result=True,
+                               bill_form=bill_form,
                                name1=name1,
                                name2=name2,
                                amount1=f'{mate1.payment():.2f}',
@@ -53,6 +52,5 @@ class BillForm(Form):
 
 app.add_url_rule('/', view_func=HomePage.as_view('home_page'))
 app.add_url_rule('/bill-form', view_func=BillFormPage.as_view('bill_form_page'))
-app.add_url_rule('/result-page', view_func=ResultPage.as_view('result_page'))
 
 app.run(debug=True)

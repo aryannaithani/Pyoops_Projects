@@ -9,7 +9,7 @@
 <body>
 <div>
     <h1>Bill Form</h1>
-    <form action="/result-page" method="post">
+    <form action="/bill-form" method="post">
         <h3>General Information</h3>
         {{bill_form.amount.label}}<br> {{bill_form.amount}}<br>
         {{bill_form.period.label}}<br> {{bill_form.period}}
@@ -24,6 +24,12 @@
         <hr>
         {{bill_form.button}}
     </form>
+    {% if result %}
+    <div class="container">
+    <h1>Results</h1>
+    <div class="button"><a href="{{link}}">Download Bill</a></div>
+    {% endif %}
+</div>
 </div>
 </body>
 </html>

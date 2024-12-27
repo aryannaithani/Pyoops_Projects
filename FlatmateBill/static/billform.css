@@ -41,3 +41,18 @@ div {
 label {
     font-size: 20px;
 }
+
+.container {
+    background-color: ghostwhite;
+    border-radius: 15px;
+    height: 700px;
+}
+
+.button {
+    text-align: center;
+    background-color: Yellowgreen;
+    width: 200px;
+    margin-left: 620px;
+    padding: 10px;
+    border-radius: 5px;
+}
