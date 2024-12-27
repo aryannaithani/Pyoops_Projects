@@ -5,15 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bill Form</title>
     <link rel="stylesheet" href="static/calorieform.css">
-    <script>
-        function myfxn(){
-            document.getElementById("result").innerHTML = "You need 1 million calories";
-        }
-    </script>
 </head>
 <body>
     <h1>Calorie Form</h1>
-    <form onsubmit="myfxn(); return false;">
+    <form action="/calorie-form" method="post">
         <p>Fill out the form below to find out how many calories you need<br>Tell us about yourself</p>
         {{calorie_form.weight.label}}<br> {{calorie_form.weight}}<br>
         {{calorie_form.height.label}}<br> {{calorie_form.height}}<br>
@@ -26,6 +21,8 @@
         <hr>
         {{calorie_form.button}}
     </form>
-    <p id="result" class="result"></p>
+    {% if result %}
+    <p>{{weight}}kgs {{height}}cms tall {{age}} years old, lives in {{city}}, {{country}}</p>
+    {% endif %}
 </body>
 </html>

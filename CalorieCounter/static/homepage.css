@@ -1,5 +1,5 @@
 h1 {
-    color: grey;
+    color: darkgrey;
     text-align: center;
     font-size: 60px;
     margin: 5px;
@@ -17,10 +17,9 @@ h1 {
 p {
     font-size: 25px;
     text-align: center;
+    color: white;
 }
 
-.container {
-    background-color: ghostwhite;
-    border-radius: 15px;
-    height: 700px;
+body {
+    background-color: black;
 }
