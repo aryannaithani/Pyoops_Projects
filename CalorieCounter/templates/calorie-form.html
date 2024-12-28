@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bill Form</title>
+    <title>BMR Calculator</title>
     <link rel="stylesheet" href="static/calorieform.css">
 </head>
 <body>
-    <h1>Calorie Form</h1>
+    <h1>BMR Calculator</h1>
     <form action="/calorie-form" method="post">
         <p>Fill out the form below to find out how many calories you need<br>Tell us about yourself</p>
         {{calorie_form.weight.label}}<br> {{calorie_form.weight}}<br>
@@ -22,7 +22,7 @@
         {{calorie_form.button}}
     </form>
     {% if result %}
-    <p>{{weight}}kgs {{height}}cms tall {{age}} years old, lives in {{city}}, {{country}}</p>
+    <p class="result">Your BMR is {{calories}} Kcal</p>
     {% endif %}
 </body>
 </html>
