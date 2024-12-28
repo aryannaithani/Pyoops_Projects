@@ -1,6 +1,7 @@
 from filestack import Client
 from fpdf import FPDF
 
+
 class PdfGenerator:
     """
     Generates a .pdf file of the bill in the main directory

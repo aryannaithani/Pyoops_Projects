@@ -7,6 +7,7 @@ from selectorlib import Extractor
 
 app = Flask(__name__)
 
+
 class HomePage(MethodView):
 
     def get(self):

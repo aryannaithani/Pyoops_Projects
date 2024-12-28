@@ -1,6 +1,7 @@
 import turtle
 from random import randint
 
+
 class Rectangle:
     """
     Creates an imaginary rectangle by randomly generating
@@ -12,6 +13,7 @@ class Rectangle:
         self.c1 = randint(0, 100), randint(0, 100)
         self.c2 = randint(0, 100), randint(0, 100)
         self.area = int(abs(self.c1[0] - self.c2[0]) * abs(self.c1[1] - self.c2[1]))
+
         print(f"Corners of the Rectangle are {self.c1} and {self.c2}")
 
     def area_is_correct(self):
@@ -48,6 +50,7 @@ class Point:
         max_x = max(obj1.c1[0], obj1.c2[0]) + 1
         min_y = min(obj1.c1[1], obj1.c2[1])
         max_y = max(obj1.c1[1], obj1.c2[1]) + 1
+
         if self.x in range(min_x, max_x) and self.y in range(min_y, max_y):
             print("Point is within the Rectangle")
         else:
@@ -87,9 +90,11 @@ class Graphics:
 
 
 obj1 = Rectangle()
+
 x = int(input("Guess x Co-ords: "))
 y = int(input("Guess y Co-ords: "))
 z = int(input("Guess Area: "))
+
 obj2 = Point(x, y)
 obj2.is_in_rectangle()
 obj1.area_is_correct()

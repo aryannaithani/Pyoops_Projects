@@ -7,6 +7,7 @@ from CLI_files import pdf
 
 app = Flask(__name__)
 
+
 class HomePage(MethodView):
 
     def get(self):
@@ -17,6 +18,7 @@ class BillFormPage(MethodView):
 
     def get(self):
         bill_form = BillForm()
+
         return render_template('bill-form.html', bill_form=bill_form)
 
     def post(self):
@@ -27,9 +29,11 @@ class BillFormPage(MethodView):
         name2 = bill_form.name2.data
         days1 = int(bill_form.days1.data)
         days2 = int(bill_form.days2.data)
+
         mate1 = flat.FlatMates(name1, days1, days2, amount)
         mate2 = flat.FlatMates(name2, days2, days1, amount)
         bill_pdf = pdf.PdfGenerator(name1, name2, days1, days2, amount, period, mate1, mate2)
+
         return render_template('bill-form.html',
                                result=True,
                                bill_form=bill_form,
@@ -41,6 +45,7 @@ class BillFormPage(MethodView):
 
 
 class BillForm(Form):
+
     amount = StringField('Bill Amount: ')
     period = StringField('Bill Period: ')
     name1 = StringField('Name: ')

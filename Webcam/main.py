@@ -8,6 +8,7 @@ import pyperclip
 
 Builder.load_file('interface.kv')
 
+
 class Webcam(Screen):
 
     def toggle_video(self):
