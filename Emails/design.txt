@@ -1,0 +1,12 @@
+a python application which sends automated mails to users everyday on their specified topics
+and sends them a list of articles related to their interest.
+
+User:
+    name
+    interest
+    email address
+articles:
+    get articles()
+email:
+    send()
+    
